@@ -11,7 +11,7 @@ const StandardBlogPage = ({ id }: { id: string }) => {
   const page = BLOG_PAGE_DATA[id];
 
   if (!page || page.hidden) {
-    return <div>Oops! This page doesn't exist. Try going back to the <a href="https://yunashin.github.io//lifestyle/blog">blog</a> page.</div>;
+    return <div>Oops! This page doesn't exist. Try going back to the <a href="/lifestyle/blog">blog</a> page.</div>;
   }
 
   const { title, tags, date, html } = page;

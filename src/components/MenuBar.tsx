@@ -8,17 +8,17 @@ const MenuBar = () => {
       {devModeOn && <div style={{ alignSelf: 'flex-end', color: 'red', fontWeight: 'bold', margin: '50px 20px 0px 0px' }}>dev mode on</div>}
       <div className="menu-bar">
         <div className="menu-bar-item-logo">
-          <a href="https://yunashin.github.io/"><img src={AriaLogo} alt="aria" className='aria' loading="lazy" /> </a>
+          <a href="/"><img src={AriaLogo} alt="aria" className='aria' loading="lazy" /> </a>
         </div>
         <div className="menu-bar-item-container">
           <div className="menu-bar-item">
-            <a href="https://yunashin.github.io//projects">projects</a>
+            <a href="/projects">projects</a>
           </div>
           <div className="menu-bar-item">
-            <a href="https://yunashin.github.io//lifestyle">lifestyle</a>
+            <a href="/lifestyle">lifestyle</a>
           </div>
           {devModeOn && <div className="menu-bar-item">
-            <a href="https://yunashin.github.io//blog-post-generator" style={{ color: 'orange' }}>blog post generator</a>
+            <a href="/blog-post-generator" style={{ color: 'orange' }}>blog post generator</a>
           </div>}
         </div>
         <div className="menu-bar-item-logo"></div>

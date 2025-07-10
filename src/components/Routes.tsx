@@ -10,7 +10,7 @@ import FoodImagePage from './lifestylePages/FoodImagePage';
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <RoutesComponent>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
