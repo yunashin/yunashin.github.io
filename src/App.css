@@ -520,7 +520,7 @@ li {
   padding: 10px 15px 10px 10px;
   cursor: pointer;
   text-align: left;
-  width: 100%;
+  width: inherit;
 }
 
 .dropdown-option input {
