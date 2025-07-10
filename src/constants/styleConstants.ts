@@ -1,0 +1,11 @@
+export const TEXT_COLOR = 'white';
+export const TEXT_COLOR_LIGHT_MODE = 'black';
+export const BACKGROUND_COLOR = '#937296';
+export const PRIMARY_BUTTON_COLOR = 'rgb(9 108 0)';
+export const BUTTON_COLOR = 'transparent';
+export const BUTTON_BORDER_COLOR = '#4d2b50';
+export const BOX_SHADOW_COLOR = '#e9a9ee';
+export const DARK_BOX_SHADOW_COLOR = '#550a5b';
+export const ACCENT_COLOR_WARM = 'rgb(243, 165, 55)';
+export const ACCENT_COLOR_WARM_LIGHT = '#f1ca95';
+export const DISABLED_TEXT_COLOR = '#c5baba';
