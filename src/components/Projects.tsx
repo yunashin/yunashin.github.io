@@ -24,9 +24,9 @@ const Projects = () => {
       <h1>side projects</h1>
       <div className="App-body">
         <div className="animated-image-card-container">
-          <AnimatedImageCard className={isMobile ? 'margin-bottom' : 'margin-right'} imageUrl="https://i.imgur.com/Phqq8X4.jpeg" buttonText="Bar Genie" onClick={() => window.open('https://yunashin.github.io/bar-genie', '_blank')} />
-          <AnimatedImageCard className={isMobile ? 'margin-bottom' : 'margin-right'} imageUrl="https://i.imgur.com/iv8i7hk.jpeg" buttonText="Flexicography" onClick={() => window.open('https://yunashin.github.io/flexicography', '_blank')} />
-          <AnimatedImageCard className={isMobile ? 'margin-bottom-lg' : ''} imageUrl="https://i.imgur.com/abmYtb4.jpeg" buttonText="Menu Maven" onClick={() => window.open('https://yunashin.github.io/menu-maven', '_blank')} />
+          <AnimatedImageCard className={isMobile ? 'margin-bottom' : 'margin-right'} imageUrl="https://i.imgur.com/Phqq8X4.jpeg" buttonText="Bar Genie" onClick={() => window.open('https://yunashin.github.io/bar-genie', '_self')} />
+          <AnimatedImageCard className={isMobile ? 'margin-bottom' : 'margin-right'} imageUrl="https://i.imgur.com/iv8i7hk.jpeg" buttonText="Flexicography" onClick={() => window.open('https://yunashin.github.io/flexicography', '_self')} />
+          <AnimatedImageCard className={isMobile ? 'margin-bottom-lg' : ''} imageUrl="https://i.imgur.com/abmYtb4.jpeg" buttonText="Menu Maven" onClick={() => window.open('https://yunashin.github.io/menu-maven', '_self')} />
         </div>
       </div>
     </div>

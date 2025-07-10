@@ -98,24 +98,23 @@ const Dropdown = ({
             {options.map((option) => {
               const isSelected = validSelectedOptions.includes(option);
               return (
-                <div key={option}>
-                  <div
-                    className={`dropdown-option ${isSelected ? 'bold' : ''} ${hoveredOption === option ? 'hovered-option' : ''}`}
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      handleOptionClick(event, option);
-                    }}
-                    onMouseEnter={(event) => {
-                      event.stopPropagation();
-                      setHoveredOption(option);
-                    }}
-                    onMouseLeave={(event) => {
-                      event.stopPropagation();
-                      setHoveredOption(null);
-                    }}>
-                    <input type="checkbox" checked={isSelected} onChange={(event) => event.stopPropagation()} />
-                    {option}
-                  </div>
+                <div
+                  key={option}
+                  className={`dropdown-option ${isSelected ? 'bold' : ''} ${hoveredOption === option ? 'hovered-option' : ''}`}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleOptionClick(event, option);
+                  }}
+                  onMouseEnter={(event) => {
+                    event.stopPropagation();
+                    setHoveredOption(option);
+                  }}
+                  onMouseLeave={(event) => {
+                    event.stopPropagation();
+                    setHoveredOption(null);
+                  }}>
+                  <input type="checkbox" checked={isSelected} onChange={(event) => event.stopPropagation()} />
+                  {option}
                 </div>
               )
             })}
