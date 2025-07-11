@@ -24,6 +24,7 @@ export const BLOG_PAGE_DATA: BlogPages = {
     id: "building-this-website",
     title: "How I built the website you're looking at",
     date: "2025-07-10",
+    lastUpdated: "2025-07-11",
     html: `<p>I first built this website in January 2023 so that I could build and publish side projects and share them with friends and family. I had learned that you could host apps without buying a custom domain using <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> and I was looking to build my first webapp game, <a href="https://yunashin.github.io/flexicography" target="_blank" rel="noopener">Flexicography</a>.</p>
 <p>In order to host projects on GitHub Pages, I needed to create a GitHub repo with the naming convention&nbsp;<code>&lt;username&gt;.github.io</code>, so I used&nbsp;<a href="https://create-react-app.dev/docs/getting-started/" target="_blank" rel="noopener">create-react-app</a> (<a href="https://react.dev/blog/2025/02/14/sunsetting-create-react-app" target="_blank" rel="noopener">deprecated</a> as of this February - I now prefer <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a>, pronounced "veet" not "vight") to create this website. I didn't want Flexicography to be the home page of my GitHub Pages site, so I left this website a blank page with the text "Welcome to my app" across the center and built Flexicography in its own repo so that I could navigate to it using a path parameter.</p>
 <p>2 years later, on Thursday, July 3rd, 2025, I took a day off from work and decided to spend the day revamping my "Welcome to my app" page into a functioning website. And by the following Wednesday, I was generally happy enough with what I built that I published it!</p>
@@ -41,6 +42,7 @@ export const BLOG_PAGE_DATA: BlogPages = {
     id: "our-flower",
     title: 'Composing "Our Flower"',
     date: "2025-07-10",
+    lastUpdated: "2025-07-10",
     html: `<p>In recent trips to visit my family back in New York, I've noticed that my mom would often sing or hum the same pretty pentatonic song while mindlessly doing chores or walking around the house. When I realized the catchy song kept getting stuck in my head, I had to ask what song it was. She told me it was called 우리나라꽃(무궁화), or loosely translated, "Our Nation's Flower (Mugunghwa)":</p>
 <p><iframe title="YouTube video player" src="https://www.youtube.com/embed/y7hVREU3Qfw?si=uVtmCGaINaLdD10A" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
 <p>Mugungwha is the Korean name of the South Korean national flower and is referred to as the rose of Sharon in English, or the "Korean rose". Scientifically, its species is called <a href="https://en.wikipedia.org/wiki/Hibiscus_syriacus" target="_blank" rel="noopener"><em>Hibiscus syriacus</em></a>.</p>
@@ -62,13 +64,14 @@ export const BLOG_PAGE_DATA: BlogPages = {
     id: "unity",
     title: "Building a 2D Farming RPG in Unity",
     date: "2025-07-09",
+    lastUpdated: "2025-07-09",
     html: `<p>Towards the beginning of 2024, a coworker of mine shared both a <a title="Unity: 2D Farming RPG" href="https://www.youtube.com/watch?v=ZPYrdKMDsGI&amp;list=PL4PNgDjMajPN51E5WzEi7cXzJ16BCHZXl&amp;ab_channel=GameDevwithJacquelynneHei" target="_blank" rel="noopener">YouTube playlist</a>&nbsp;in which <a href="https://www.youtube.com/@gamedevwithjacquelynnehei465" target="_blank" rel="noopener">@gamedevwithjacquelynnehei465</a> teaches how to build a 2D farming RPG in Unity and a preview of the <em>Math Blaster!</em>-inspired game that he was able to build for his son as a result of watching the videos.</p>
 <p>Game development had always seemed interesting to me as a software engineer and video game enthusiast, but any time I had seen clips of game developers using Unity, everything looked so complicated and confusing! The Unity interface looked so foreign to me, and it felt daunting that all the code would have to be written in C#, which I had never learned, and/or C++, which I haven't used since my sophomore year of college.</p>
 <p>Yet, it felt encouraging that I personally knew someone who was able to learn how to use Unity so quickly from simply watching videos on YouTube. So I decided to watch the videos myself and give game development a try.</p>
 <p>I was so pleasantly surprised with just how digestible Jacquelynne made her tutorial, and how straightforward it was to follow along! By the 10th video in the playlist, I was able to:</p>
 <ol>
 <li>Create a basic 2D farm with grass, dirt, and a house</li>
-<li>Animate a walking chicken to represent the player</li>
+<li>Animate an interactive walking chicken to represent the player</li>
 <li>Scatter bags of seeds throughout the farm that the chicken can pick up when walking over</li>
 <li>Build a toggle-able inventory that displays all the items that the chicken has picked up</li>
 </ol>
@@ -86,6 +89,7 @@ export const BLOG_PAGE_DATA: BlogPages = {
     id: "boston",
     title: "Things to do in Boston",
     date: "2025-07-06",
+    lastUpdated: "2025-07-06",
     html: `<h2>Food</h2>
 <p>I'm looking forward to the <a href="http://guide.michelin.com/us/en/article/news-and-views/michelin-guide-boston-philadelphia-massachusetts-pennsylvania-philly" target="_blank" rel="noopener">Michelin guide coming to Boston</a> soon, and wanted to share some of my favorite restaurants in the Boston area.</p>
 <ol>
@@ -131,6 +135,7 @@ export const BLOG_PAGE_DATA: BlogPages = {
     id: "bulgogi",
     title: "Bulgogi",
     date: "2025-07-06",
+    lastUpdated: "2025-07-06",
     html: `<h5><em>2-3 servings | 2 days (Cook time: 5 minutes)</em></h5>
 <h2>Ingredients</h2>
 <ul>
@@ -166,6 +171,7 @@ export const BLOG_PAGE_DATA: BlogPages = {
     id: "seoul",
     title: "Seoul (October 2024)",
     date: "2025-07-03",
+    lastUpdated: "2025-07-03",
     html: `<p>안녕!</p>
       <p>My favorite part about my trip to Seoul in October of 2024 was visiting Apgujeong Rodeo! It's a trendy area within Seoul these days, featuring luxury fashion, cute boutiques and cafes, and hip restaurants and bars.</p>
       <p>My cousin recommended a churro cafe in the area called <a title="Minute Papillon on Instagram" href="https://www.instagram.com/minute.papillon.official/?hl=en" target="_blank" rel="noopener">Minute Papillon</a>, which I loved! The seasonal churros and drinks were delicious and the ambience was so cute.</p>
@@ -184,6 +190,7 @@ export const BLOG_PAGE_DATA: BlogPages = {
     id: "japan",
     title: "Japan (October 2024)",
     date: "2025-07-03",
+    lastUpdated: "2025-07-03",
     html: `<p>Traveling to Japan was an eye-opening experience!</p>
 <p>We visited:</p>
 <ul>
