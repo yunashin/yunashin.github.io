@@ -6,6 +6,7 @@ import { formatDate } from "../../utils/formatDate";
 import Button from "../ui/Button";
 import PageTitle from "../ui/PageTitle";
 import TagBadge from "./TagBadge";
+import EmptyState from "../EmptyState";
 
 const StandardBlogPage = ({ id }: { id: string }) => {
   const navigate = useNavigate();
@@ -13,10 +14,11 @@ const StandardBlogPage = ({ id }: { id: string }) => {
 
   if (!page || page.hidden) {
     return (
-      <div>
-        Oops! This page doesn't exist. Try going back to the{" "}
-        <a href="/lifestyle/blog">blog</a> page.
-      </div>
+      <EmptyState
+        redirectTo="/lifestyle/blog"
+        redirectText="blog"
+        renderMenuBar={false}
+      />
     );
   }
 
