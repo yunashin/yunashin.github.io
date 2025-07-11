@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.5b4ad314.css",
-    "main.js": "/static/js/main.59f4620e.js",
+    "main.css": "/static/css/main.ce2341a1.css",
+    "main.js": "/static/js/main.0b2227ad.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
     "static/media/profile.png": "/static/media/profile.e0db3e8d40c03e62108a.png",
     "static/media/AriaLogo.png": "/static/media/AriaLogo.2b0dc884950e4f10018c.png",
     "static/media/farming.mp4": "/static/media/farming.ca064537bb5c4e6173dd.mp4",
+    "static/media/back-button.svg": "/static/media/back-button.7c27a1c3313826af9b1e848c077e6d47.svg",
     "index.html": "/index.html",
-    "main.5b4ad314.css.map": "/static/css/main.5b4ad314.css.map",
-    "main.59f4620e.js.map": "/static/js/main.59f4620e.js.map",
+    "main.ce2341a1.css.map": "/static/css/main.ce2341a1.css.map",
+    "main.0b2227ad.js.map": "/static/js/main.0b2227ad.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b4ad314.css",
-    "static/js/main.59f4620e.js"
+    "static/css/main.ce2341a1.css",
+    "static/js/main.0b2227ad.js"
   ]
 }
