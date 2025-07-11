@@ -1,12 +1,13 @@
-import { BrowserRouter, Route, Routes as RoutesComponent } from 'react-router';
+import { BrowserRouter, Route, Routes as RoutesComponent } from "react-router";
 
-import Home from './Home';
-import Projects from './Projects';
-import Lifestyle from './Lifestyle';
-import Blog from './lifestylePages/Blog';
-import Food from './lifestylePages/Food';
-import BlogPostGenerator from './tinyMCE/BlogPostGenerator';
-import FoodImagePage from './lifestylePages/FoodImagePage';
+import Home from "./Home";
+import Projects from "./Projects";
+import Lifestyle from "./Lifestyle";
+import Blog from "./lifestylePages/Blog";
+import Food from "./lifestylePages/Food";
+import BlogPostGenerator from "./tinyMCE/BlogPostGenerator";
+import FoodImagePage from "./lifestylePages/FoodImagePage";
+import EmptyState from "./EmptyState";
 
 const Routes = () => {
   return (
@@ -19,6 +20,7 @@ const Routes = () => {
         <Route path="/lifestyle/food" element={<Food />} />
         <Route path="/lifestyle/food-image" element={<FoodImagePage />} />
         <Route path="/blog-post-generator" element={<BlogPostGenerator />} />
+        <Route path="*" element={<EmptyState />} />
       </RoutesComponent>
     </BrowserRouter>
   );
