@@ -4,16 +4,18 @@ const EmptyState = ({
   renderMenuBar = true,
   redirectTo = "/",
   redirectText = "home",
+  title = "Oops! This page doesn't exist.",
 }: {
   renderMenuBar?: boolean;
   redirectTo?: string;
   redirectText?: string;
+  title?: string;
 }) => {
   return (
     <>
       {renderMenuBar && <MenuBar />}
       <div className="flex-box-vertical">
-        <span className="page-title">Oops! This page doesn't exist.</span>
+        <span className="page-title">{title}</span>
         <span>
           Try going back to the <a href={redirectTo}>{redirectText}</a> page.
         </span>

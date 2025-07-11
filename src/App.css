@@ -254,6 +254,11 @@
   margin-top: 2em;
 }
 
+.subtitle {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
 .bulleted {
   list-style-position: inside;
   list-style-type: circle;
@@ -701,6 +706,12 @@ li {
   justify-content: center;
   align-items: center;
   border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .animated-image-card-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .animated-image-card-overlay:hover {

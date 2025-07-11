@@ -8,6 +8,7 @@ export type BlogPost = {
   id: string;
   title: string;
   date: string;
+  lastUpdated: string;
   html: string;
   tags: string[];
   displayOrder: number;

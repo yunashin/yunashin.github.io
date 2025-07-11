@@ -22,11 +22,16 @@ const StandardBlogPage = ({ id }: { id: string }) => {
     );
   }
 
-  const { title, tags, date, html } = page;
+  const { title, tags, date, html, lastUpdated } = page;
 
   return (
     <div>
-      <PageTitle title={title} onClick={() => navigate("/lifestyle/blog")} />
+      <PageTitle
+        title={title}
+        titleStyles={{ marginBottom: "0" }}
+        subtitle={formatDate(new Date(date))}
+        onClick={() => navigate("/lifestyle/blog")}
+      />
       {devModeOn && (
         <Button
           onClick={() => navigate(`/blog-post-generator?editingBlogId=${id}`)}
@@ -44,7 +49,7 @@ const StandardBlogPage = ({ id }: { id: string }) => {
           </div>
           <div dangerouslySetInnerHTML={{ __html: html }} />
           <p className="blog-date">
-            Last updated on {formatDate(new Date(date))}
+            Last updated on {formatDate(new Date(lastUpdated))}
           </p>
         </div>
       </div>
