@@ -16,7 +16,6 @@
     "fs-extra": "^11.3.0",
     "gh-pages": "^5.0.0",
     "install": "^0.13.0",
-    "jquery": "^3.7.1",
     "js-confetti": "^0.12.0",
     "npm": "^11.4.2",
     "or": "^0.2.0",
@@ -55,8 +54,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/jquery": "^3.5.32"
   }
 }
