@@ -11,14 +11,20 @@ const Blog = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
   const [isTagsDropdownOpen, setIsTagsDropdownOpen] = useState(false);
-  const id = searchParams.get('id');
+  const id = searchParams.get("id");
   const allTagsHidden = selectedTags.length === 0;
-  const filteredBlogPages = allTagsHidden ? Object.values(BLOG_PAGE_DATA).filter((page) => !page.hidden) : Object.values(BLOG_PAGE_DATA).filter((page) => page.tags.some((tag) => selectedTags.includes(tag) && !page.hidden));
-
+  const filteredBlogPages = allTagsHidden
+    ? Object.values(BLOG_PAGE_DATA).filter((page) => !page.hidden)
+    : Object.values(BLOG_PAGE_DATA).filter((page) =>
+        page.tags.some((tag) => selectedTags.includes(tag) && !page.hidden)
+      );
+  const sortedBlogPages = filteredBlogPages.sort(
+    (a, b) => b.displayOrder - a.displayOrder
+  );
 
   const getCurrentPage = () => {
     if (id) {
-      return <StandardBlogPage id={id} />
+      return <StandardBlogPage id={id} />;
     } else {
       return (
         <BlogHome
@@ -26,19 +32,19 @@ const Blog = () => {
           setIsTagsDropdownOpen={setIsTagsDropdownOpen}
           selectedTags={selectedTags}
           setSelectedTags={setSelectedTags}
-          filteredBlogPages={filteredBlogPages}
+          filteredBlogPages={sortedBlogPages}
           setSearchParams={setSearchParams}
         />
       );
     }
-  }
+  };
 
-  return <div>
-    <MenuBar />
-    <div className="App-body">
-      {getCurrentPage()}
+  return (
+    <div>
+      <MenuBar />
+      <div className="App-body">{getCurrentPage()}</div>
     </div>
-  </div>;
+  );
 };
 
 export default Blog;
