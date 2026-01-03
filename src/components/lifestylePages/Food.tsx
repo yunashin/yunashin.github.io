@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 
 import {
@@ -17,41 +17,76 @@ const Food = () => {
   const [selectedTags, setSelectedTags] = useState<FoodTag[]>([]);
   const [isLocationDropdownOpen, setIsLocationDropdownOpen] = useState(false);
   const [isCuisineDropdownOpen, setIsCuisineDropdownOpen] = useState(false);
+  const [searchText, setSearchText] = useState("");
   const allTagsHidden = selectedTags.length === 0;
-  const filteredFoodImages = allTagsHidden
-    ? FOOD_PAGE_DATA
-    : FOOD_PAGE_DATA.filter((foodImage) => {
-        const selectedLocationTags = selectedTags.filter((tag) =>
-          LOCATION_FOOD_TAGS.includes(tag)
-        );
-        const selectedCuisineTags = selectedTags.filter((tag) =>
-          CUISINE_FOOD_TAGS.includes(tag)
-        );
-        const locationTags =
-          selectedLocationTags.length > 0
-            ? selectedLocationTags
-            : LOCATION_FOOD_TAGS;
-        const cuisineTags =
-          selectedCuisineTags.length > 0
-            ? selectedCuisineTags
-            : CUISINE_FOOD_TAGS;
-        const foodImageLocationTags = foodImage.tags.filter((tag) =>
-          LOCATION_FOOD_TAGS.includes(tag)
-        );
-        const foodImageCuisineTags = foodImage.tags.filter((tag) =>
-          CUISINE_FOOD_TAGS.includes(tag)
-        );
-        const locationMatch =
-          selectedLocationTags.length > 0
-            ? foodImageLocationTags.some((tag) => locationTags.includes(tag))
-            : true;
-        const cuisineMatch =
-          selectedCuisineTags.length > 0
-            ? foodImageCuisineTags.some((tag) => cuisineTags.includes(tag))
-            : true;
-        return locationMatch && cuisineMatch;
-      });
+  const filteredFoodImages = useMemo(
+    () =>
+      allTagsHidden
+        ? FOOD_PAGE_DATA.filter((foodImage) => {
+            const searchTextMatch =
+              searchText === ""
+                ? true
+                : foodImage.caption
+                    .toLocaleLowerCase()
+                    .includes(searchText.toLocaleLowerCase());
+            return searchTextMatch;
+          })
+        : FOOD_PAGE_DATA.filter((foodImage) => {
+            const selectedLocationTags = selectedTags.filter((tag) =>
+              LOCATION_FOOD_TAGS.includes(tag)
+            );
+            const selectedCuisineTags = selectedTags.filter((tag) =>
+              CUISINE_FOOD_TAGS.includes(tag)
+            );
+            const locationTags =
+              selectedLocationTags.length > 0
+                ? selectedLocationTags
+                : LOCATION_FOOD_TAGS;
+            const cuisineTags =
+              selectedCuisineTags.length > 0
+                ? selectedCuisineTags
+                : CUISINE_FOOD_TAGS;
+            const foodImageLocationTags = foodImage.tags.filter((tag) =>
+              LOCATION_FOOD_TAGS.includes(tag)
+            );
+            const foodImageCuisineTags = foodImage.tags.filter((tag) =>
+              CUISINE_FOOD_TAGS.includes(tag)
+            );
+            const locationMatch =
+              selectedLocationTags.length > 0
+                ? foodImageLocationTags.some((tag) =>
+                    locationTags.includes(tag)
+                  )
+                : true;
+            const cuisineMatch =
+              selectedCuisineTags.length > 0
+                ? foodImageCuisineTags.some((tag) => cuisineTags.includes(tag))
+                : true;
+            const searchTextMatch =
+              searchText === ""
+                ? true
+                : foodImage.caption
+                    .toLocaleLowerCase()
+                    .includes(searchText.toLocaleLowerCase());
+
+            return locationMatch && cuisineMatch && searchTextMatch;
+          }),
+    [allTagsHidden, searchText, selectedTags]
+  );
+
   const numberOfEmptyColumns = 4 - (filteredFoodImages.length % 4);
+
+  const FoodImages = useMemo(
+    () =>
+      filteredFoodImages.map((foodImage, idx) => (
+        <FoodPageImage
+          key={`${foodImage.id}-${idx}`}
+          foodImage={foodImage}
+          idx={idx}
+        />
+      )),
+    [filteredFoodImages]
+  );
 
   return (
     <>
@@ -71,6 +106,16 @@ const Food = () => {
         </p>
         <div className="centered-container">
           <div className="flex-box-vertical">
+            <input
+              id="food-page-search-input"
+              className="food-page-search-input"
+              type="text"
+              placeholder="Search"
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setSearchText(e.target.value)
+              }
+              value={searchText}
+            />
             <div className="dropdown-container">
               <Dropdown
                 className="dropdown-filter"
@@ -119,13 +164,7 @@ const Food = () => {
               </div>
             )}
             <div className="grid-row">
-              {filteredFoodImages.map((foodImage, idx) => (
-                <FoodPageImage
-                  key={`${foodImage.id}-${idx}`}
-                  foodImage={foodImage}
-                  idx={idx}
-                />
-              ))}
+              {FoodImages}
               {numberOfEmptyColumns > 0 &&
                 Array.from({ length: numberOfEmptyColumns }).map((_, idx) => (
                   <div key={`empty-column-${idx}`} className="grid-column" />
