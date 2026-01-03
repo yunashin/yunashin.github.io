@@ -399,6 +399,27 @@ li {
   margin-right: 4px;
 }
 
+.food-page-search-input {
+  border-radius: 6px;
+  border: 1px solid var(--button-border-color);
+  color: var(--text-color);
+  background-color: transparent;
+  min-width: 10em;
+  padding: 6px;
+  font-size: 12pt;
+  margin-bottom: 2vh;
+}
+
+.food-page-search-input::placeholder {
+  color: var(--accent-color-warm);
+}
+
+@media (max-width: 768px) {
+  .food-page-search-input {
+    margin-left: -72px;
+  }
+}
+
 .food-images {
   width: 80%;
   margin-top: 24px;
